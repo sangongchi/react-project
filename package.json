@@ -12,7 +12,8 @@
     "axios": "^0.27.2",
     "qs": "^6.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "sa-sdk-javascript": "^1.23.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

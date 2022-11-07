@@ -23,7 +23,7 @@ service.interceptors.request.use(
     cancelRequest.cancelReq(config);
     // 记录当前请求
     cancelRequest.addCancelReqKey(config, axios.CancelToken);
-    console.log('config',config)
+    console.log('config', config);
     return config;
   },
   (err) => {
