@@ -22,16 +22,23 @@ job-test2:
 # 定义build
 job-build:
   stage: build
-  tags: newContainer
+  tags: 
+    - newContainer
   only:
     - tags
     - /^v{1}\d+([.]\d+){2}$/
     - playground
+  script:
+    - echo "build-----"
 
 # 任务成功的返回
 job_success:
   stage: job_success
+  script:
+    - echo "job_success-----"
 
 # 任务失败的返回
 job_failure:
   stage: job_failure
+  script:
+    - echo "job_success-----"
