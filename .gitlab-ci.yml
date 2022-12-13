@@ -1,5 +1,5 @@
 # 定义基础镜像
-image: 镜像地址
+# image: 镜像地址
 
 # 定义 job 的执行顺序
 stages:
