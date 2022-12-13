@@ -1,0 +1,37 @@
+# 定义基础镜像
+image: 镜像地址
+
+# 定义 job 的执行顺序
+stages:
+  - test
+  - build
+  - job_failure
+  - job_success
+
+# 定义test阶段
+job-test:
+  stage: test
+  script:
+    - echo "test"
+
+job-test2:
+  stage: test
+  script:
+    - echo "test2-----"
+
+# 定义build
+job-build:
+  stage: build
+  tags: newContainer
+  only:
+    - tags
+    - /^v{1}\d+([.]\d+){2}$/
+    - playground
+
+# 任务成功的返回
+job_success:
+  stage: job_success
+
+# 任务失败的返回
+job_failure:
+  stage: job_failure
