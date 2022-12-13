@@ -11,11 +11,15 @@ stages:
 # 定义test阶段
 job-test:
   stage: test
+  tags: 
+    - k8s-runner
   script:
     - echo "test"
 
 job-test2:
   stage: test
+  tags: 
+    - k8s-runner
   script:
     - echo "test2-----"
 
@@ -23,7 +27,7 @@ job-test2:
 job-build:
   stage: build
   tags: 
-    - newContainer
+    - k8s-runner
   only:
     - tags
     - /^v{1}\d+([.]\d+){2}$/
@@ -34,11 +38,17 @@ job-build:
 # 任务成功的返回
 job_success:
   stage: job_success
+  tags: 
+    - k8s-runner
   script:
     - echo "job_success-----"
+  when: on_success
 
 # 任务失败的返回
 job_failure:
   stage: job_failure
+  tags: 
+    - k8s-runner
   script:
     - echo "job_success-----"
+  when: on_failure
